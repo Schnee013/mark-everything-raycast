@@ -1,6 +1,6 @@
 /** Native form fields adapted from raindrop-io BookmarkForm (MIT, 4cd99da7). */
 import type { ReactNode } from "react";
-import { Form, Icon } from "@raycast/api";
+import { Color, Form, Icon } from "@raycast/api";
 import type { useForm } from "@raycast/utils";
 import type { CollectionItem, FormValues, TagsResponse } from "../types";
 
@@ -42,7 +42,16 @@ export function BookmarkFields({
                 key={value}
                 value={value}
                 title={name && name !== label ? `${name} (${label})` : label}
-                icon={cover ? { source: cover } : Icon.Folder}
+                icon={
+                  cover
+                    ? {
+                        source: cover,
+                        tintColor: cover.startsWith("collection-icons/twemoji-")
+                          ? undefined
+                          : Color.PrimaryText,
+                      }
+                    : Icon.Folder
+                }
               />
             ))}
           </Form.Dropdown.Section>

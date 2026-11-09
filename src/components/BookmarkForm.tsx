@@ -13,7 +13,7 @@ import { useCollections } from "../hooks/useCollections";
 import { useSavedLookup } from "../hooks/useSavedLookup";
 import { useTags } from "../hooks/useTags";
 import { useSubmission } from "../hooks/useSubmission";
-import { manager, failure } from "../ui";
+import { manager, failure, ME_INSTALL_URL } from "../ui";
 import { session } from "../session";
 import { Failure } from "../helper";
 import type { FormValues } from "../types";
@@ -234,6 +234,7 @@ export const BookmarkForm = (props: {
                 .catch(failure)
             }
           />
+          <Action.OpenInBrowser title="ME Installation Guide" url={ME_INSTALL_URL} />
         </ActionPanel>
       }
     >

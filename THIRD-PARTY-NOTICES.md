@@ -25,8 +25,8 @@ Adopted files and their local counterparts:
 
 ## Reuse and distribution boundaries
 
-- The reused source is the **Raycast extension** listed above, not the full Raindrop web application or its backend. The table records the provenance of adapted UI, collection helpers and view types; local behavior has changed as described.
-- The Raindrop REST/OAuth/account client, Pro/AI account features, cloud data operations and Raindrop branding assets are not distributed by this extension. Data hooks with similar filenames implement ME queries rather than the upstream REST client.
+- The reused source is the **Raycast extension** listed above, not the full Raindrop web application or its backend. The additional collection SVG assets have a separate source and copyright below. The table records the provenance of adapted UI, collection helpers and view types; local behavior has changed as described.
+- The Raindrop REST/OAuth/account client, Pro/AI account features, cloud data operations are not distributed by this extension. Data hooks with similar filenames implement ME queries rather than the upstream REST client.
 - Bookmark data is accessed through ME’s installed local stdio helper. Versioned edits, duplicate checks, pending-command handling and ME-specific projections live in this companion’s adapter code; the data core, browser manager, import, synchronization and pinyin indexing remain in the separate ME project.
 - `src/core-api.d.ts` is an exact declaration snapshot from ME, documented in [docs/protocol-source.json](docs/protocol-source.json). It is a type contract, not a copy of the data core or sync implementation.
 - The light and dark Mark Everything icons were supplied by this project’s maintainer and resized to the required dimensions. They are not Raindrop icons. Project names identify provenance only; no affiliation, sponsorship or endorsement by Raindrop is claimed.
@@ -34,3 +34,15 @@ Adopted files and their local counterparts:
 ## License preservation
 
 The complete upstream MIT license, including **Copyright (c) 2021 Raycast**, is preserved verbatim in [assets/THIRD-PARTY-NOTICES.txt](assets/THIRD-PARTY-NOTICES.txt). This file is included both in the public source and in the bundled extension. The project’s [MIT license](LICENSE) does not replace or remove the upstream notice.
+
+## Raindrop.io application collection icons
+
+The 199 files without the `twemoji-` prefix in `assets/collection-icons/` are unchanged copies of `src/assets/icons/*.svg` from [raindropio/app](https://github.com/raindropio/app/tree/94ba9cbb88002987ed49cbc3848c93d396ae47a1/src/assets/icons), fixed commit `94ba9cbb88002987ed49cbc3848c93d396ae47a1`. They are MIT licensed, **Copyright (c) 2024 Rustem Mussabekov**. The complete original notice is also included in `assets/THIRD-PARTY-NOTICES.txt`.
+
+`assets/collection-icons.json` lists these packaged filenames. ME's stored `icon` is mapped to the corresponding local asset; native tinting keeps the monochrome shapes readable in light and dark appearances. This adds no Raindrop API or account dependency. Online covers from Icons8, Iconfinder, or a user's Raindrop library are not included; the repository MIT license is not treated as permission to redistribute those separate resources.
+
+## Twemoji color collection icons
+
+32 files named `twemoji-*.svg` are selected from [jdecked/twemoji v17.0.3](https://github.com/jdecked/twemoji/tree/b6b55fef1e8636b540a6d016a4729ca8cdf2e60b), commit `b6b55fef1e8636b540a6d016a4729ca8cdf2e60b`. Graphics by Twitter, Inc. and other contributors are licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), separately from the project's MIT code. SVG bytes are unchanged; only filenames are descriptive local names. No Twemoji parser, CDN or runtime account dependency is included. These are alternative choices, not a restoration of privately selected Raindrop online images.
+
+The full notice is in `assets/TWEMOJI-LICENSE.txt`; `assets/twemoji-source.json` records every source path and SHA-256. Both files are included in the extension bundle.

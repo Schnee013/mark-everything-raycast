@@ -2,13 +2,13 @@
 
 Search, save and edit bookmarks in your local ME library from Raycast.
 
-This is the Raycast companion for an existing ME installation. **ME does not yet have a public installation guide or release. This repository publishes the companion source; a working ME installation is required to use it.**
+This is the Raycast companion for [Mark Everything (ME)](https://github.com/Schnee013/mark-everything), a local bookmark manager. **Install and configure ME first:** [installation guide](https://github.com/Schnee013/mark-everything/blob/main/docs/INSTALL.md) and [releases](https://github.com/Schnee013/mark-everything/releases). The current prebuilt ME helper supports macOS on Apple Silicon.
 
 Parts of the interface are adapted from the MIT-licensed Raindrop.io extension in `raycast/extensions`. This is an independent project, not an official Raindrop product or a Raindrop account integration. See [Third-party notices](THIRD-PARTY-NOTICES.md) for the pinned source, reused files, and adaptation boundaries.
 
 ## Setup
 
-1. Install and configure ME, bind a library in its browser manager, and ensure its local helper is running correctly.
+1. [Install and configure ME](https://github.com/Schnee013/mark-everything/blob/main/docs/INSTALL.md), bind a library in its browser manager, and ensure its local helper is running correctly.
 2. Install this Raycast extension and open **Search Bookmarks** or **Save Bookmark**.
 3. The extension reads ME's default `~/Library/Application Support/me-raindrop/helper-install.json`. To select another ME environment, set **Helper Discovery Record** to its complete configuration file. An invalid explicit path stops the connection; it never silently selects your default library. A recognized retired ME 0.2 installation is migrated with a notice.
 
@@ -52,7 +52,7 @@ Defaults: edit `cmd+e`, details `cmd+shift+d`, Trash `ctrl+x`, add URL `ctrl+shi
 
 Bookmark operations use the installed ME helper over local stdio. This extension does not read WebDAV credentials or upload bookmarks itself. The main ME application owns synchronization.
 
-Website icons use the favicon provider selected by Raycast (Raycast by default, or Google/DuckDuckGo when configured). Requests contain the website hostname, not the full bookmark URL or note. When Raycast disables favicons or selects Apple’s native provider, the extension uses a local fallback icon. Collection cover images and remote images in the Markdown detail content, including notes and descriptions, may request their full image URLs from the respective hosts. Notes retain Markdown formatting. These image requests mean the UI is not strictly offline.
+Website icons use the favicon provider selected by Raycast (Raycast by default, or Google/DuckDuckGo when configured). Requests contain the website hostname, not the full bookmark URL or note. When Raycast disables favicons or selects Apple’s native provider, the extension uses a local fallback icon. Collection icons are bundled locally. Remote images in the Markdown detail content, including notes and descriptions, may request their full image URLs from the respective hosts. Notes retain Markdown formatting. These image requests mean the UI is not strictly offline.
 
 Raycast LocalStorage holds pending command contents until they are confirmed and cleared, plus the last collection filter per library. Ordinary unsubmitted drafts are not persisted.
 
@@ -71,3 +71,5 @@ The reused Raycast/Raindrop UI and its pinned source are documented in [THIRD-PA
 Report extension problems and feature requests through [GitHub Issues](https://github.com/Schnee013/mark-everything-raycast/issues). This project is published and maintained by [Schnee013](https://github.com/Schnee013); the Raycast author handle is `roy`.
 
 Licensed under [MIT](LICENSE). Adapted upstream code retains its original copyright and license in [assets/THIRD-PARTY-NOTICES.txt](assets/THIRD-PARTY-NOTICES.txt). ME’s browser manager, helper executable, database, sync engine, and search index are separate from this repository.
+
+Collection icons are bundled for offline use: 199 monochrome Raindrop SVGs and 32 color Twemoji SVGs. Change them in the ME manager; the Raycast companion displays the same choice. See [third-party notices](THIRD-PARTY-NOTICES.md) for the separate MIT and CC BY 4.0 attribution.

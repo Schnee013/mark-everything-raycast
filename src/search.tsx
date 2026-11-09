@@ -7,6 +7,7 @@
  */
 import { Action, ActionPanel, Icon, List, openExtensionPreferences, useNavigation } from "@raycast/api";
 import { useState } from "react";
+import { ME_INSTALL_URL } from "./ui";
 import BookmarkItem from "./components/BookmarkItem";
 import EditBookmark from "./components/EditBookmark";
 import AlreadySaved from "./components/AlreadySaved";
@@ -69,6 +70,7 @@ function SearchBookmarks() {
               icon={Icon.ArrowClockwise}
               onAction={revalidate}
             />
+            {error && <Action.OpenInBrowser title="ME Installation Guide" url={ME_INSTALL_URL} />}
             <Action title="Open Preferences" icon={Icon.Gear} onAction={openExtensionPreferences} />
           </ActionPanel>
         }

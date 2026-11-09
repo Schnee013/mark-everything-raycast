@@ -4,7 +4,7 @@
  * native labels/icons; equal collection names and paths are displayed once.
  */
 import React from "react";
-import { Icon, List } from "@raycast/api";
+import { Color, Icon, List } from "@raycast/api";
 import { CollectionItem } from "../types";
 
 type CollectionsDropdownProps = {
@@ -36,7 +36,16 @@ const CollectionsDropdown = React.memo(function CollectionsDropdown({
                 : collection.label
             }
             value={`${collection.value}`}
-            icon={collection.cover ? { source: collection.cover } : { source: Icon.Folder }}
+            icon={
+              collection.cover
+                ? {
+                    source: collection.cover,
+                    tintColor: collection.cover.startsWith("collection-icons/twemoji-")
+                      ? undefined
+                      : Color.PrimaryText,
+                  }
+                : { source: Icon.Folder }
+            }
           />
         ))}
       </List.Dropdown.Section>

@@ -1,5 +1,19 @@
 # Changelog
 
+## [Color Collection Icons] - {PR_MERGE_DATE}
+
+- Add 32 offline Twemoji collection icons, preserve their colors, and include CC BY 4.0 attribution.
+
+## [Bundled Collection Icons] - {PR_MERGE_DATE}
+
+- Show ME collection icons from bundled, licensed SVG assets in search and bookmark forms.
+- Keep monochrome collection icons readable in light and dark appearances.
+
+## [Public ME Setup and Command Icons] - {PR_MERGE_DATE}
+
+- Link the public ME installation guide and releases from setup and error actions.
+- Use the supplied light and dark ME icons for both commands.
+
 ## [Mark Everything Branding] - {PR_MERGE_DATE}
 
 - Use the Mark Everything name and dedicated light and dark icons.
@@ -34,4 +48,3 @@
 - Remove obsolete submission/prefill paths and the bookmark/editor/duplicate-view import cycle.
 - Include the ME protocol snapshot and upstream MIT notice; enable ESLint and Prettier and document privacy and installation requirements.
 
-Public ME installation guidance and Store submission remain outstanding.

@@ -1,6 +1,8 @@
-import { openExtensionPreferences, showToast, Toast } from "@raycast/api";
+import { open, openExtensionPreferences, showToast, Toast } from "@raycast/api";
 import { rpc, managerReceipt, type Session } from "./helper";
 import { managerAvailability, managerNotice, type ManagerTarget } from "./helpers/manager";
+
+export const ME_INSTALL_URL = "https://github.com/Schnee013/mark-everything/blob/main/docs/INSTALL.md";
 
 export async function failure(e: unknown) {
   await showToast({
@@ -10,6 +12,10 @@ export async function failure(e: unknown) {
     primaryAction: {
       title: "Open Preferences",
       onAction: openExtensionPreferences,
+    },
+    secondaryAction: {
+      title: "ME Installation Guide",
+      onAction: () => open(ME_INSTALL_URL),
     },
   });
 }
